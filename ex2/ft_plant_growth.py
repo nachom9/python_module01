@@ -1,32 +1,29 @@
-#!/usr/bin/env python
+class Plant:
 
-class plant:
-    def __init__(self, name, height, age):
+    def __init__(self, name, height, time):
         self.name = name
         self.height = height
-        self.age = age
+        self.time = time
 
-    def garden_growth(self):
-        i = 1
-        while (i <= 7):
-            print(f"=== Day {i} ===")
-            print(f"{self.name}: {self.height}cm, {self.age} days old")
-            grow(self)
-            age(self)
-            i += 1
-        else:
-            print(f"Growth this week: +{i - 2}cm")
+    def age(self):
+        self.time += 1
+
+    def grow(self):
+        self.height += 1
+
+    def get_info(self):
+        print(f"{self.name}, {self.height}cm, {self.time} days old")
 
 
-rose = plant("Rose", 25, 30)
-
-
-def grow(plant):
-    plant.height += 1
-
-
-def age(plant):
-    plant.age += 1
-
-
-rose.garden_growth()
+if __name__ == "__main__":
+    rose = Plant("Rose", 25, 30)
+    print("=== Day 1 ===")
+    rose.get_info()
+    days = 0
+    while days < 6:
+        rose.age()
+        rose.grow()
+        days += 1
+    print("=== Day 7 ===")
+    rose.get_info()
+    print("Growth this week: +6cm")

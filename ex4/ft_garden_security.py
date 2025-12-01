@@ -1,6 +1,4 @@
-#!/usr/bin/env python
-
-class plant:
+class SecurePlant:
 
     def __init__(self, name, st_height, st_age):
         self.__name = name
@@ -17,7 +15,7 @@ class plant:
                   f"{height}cm [REJECTED]")
             print("Security: Negative height rejected")
             print(f"\nCurrent plant: {plant.__name} "
-                  f"({plant.__st_height}cm {plant.__st_age} days)")
+                  f"({plant.__st_height}cm, {plant.__st_age} days)")
 
     def set_age(plant, age):
         if age >= 0:
@@ -28,7 +26,7 @@ class plant:
                   f"age {age} days [REJECTED]")
             print("Security: Negative age rejected")
             print(f"\nCurrent plant: {plant.__name} "
-                  f"({plant.__st_height}cm {plant.__st_age} days)")
+                  f"({plant.__st_height}cm, {plant.__st_age} days)")
 
     def get_height(plant):
         return plant.__st_height
@@ -37,8 +35,9 @@ class plant:
         return plant.__st_age
 
 
-print("=== Garden Security System ===")
-rose = plant("Rose", 10, 10)
-plant.set_height(rose, 25)
-plant.set_age(rose, 30)
-plant.set_height(rose, -5)
+if __name__ == "__main__":
+    print("=== Garden Security System ===")
+    rose = SecurePlant("Rose", 10, 10)
+    rose.set_height(25)
+    rose.set_age(30)
+    rose.set_height(-5)

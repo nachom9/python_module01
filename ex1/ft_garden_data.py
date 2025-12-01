@@ -1,9 +1,4 @@
-#!/usr/bin/env python
-
-print("=== Garden Plant Registry ===")
-
-
-class plant:
+class Plant:
     def __init__(self, name, height, age):
         self.name = name
         self.height = height
@@ -13,9 +8,11 @@ class plant:
         print(f"{self.name}: {self.height}cm, {self.age} days old")
 
 
-rose = plant("Rose", "25", "30")
-sunflower = plant("Sunflower", "80", "45")
-cactus = plant("Cactus", "15", "120")
-rose.garden_data()
-sunflower.garden_data()
-cactus.garden_data()
+if __name__ == "__main__":
+    print("=== Garden Plant Registry ===")
+    rose = Plant("Rose", 25, 30)
+    sunflower = Plant("Sunflower", 80, 45)
+    cactus = Plant("Cactus", 15, 120)
+    rose.garden_data()
+    sunflower.garden_data()
+    cactus.garden_data()
