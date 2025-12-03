@@ -1,7 +1,16 @@
 class Plant:
+    """Class representing a basic plant with height and age tracking."""
+
     plant_count = 0
 
-    def __init__(self, name, st_height, st_age):
+    def __init__(self, name: str, st_height: int, st_age: int) -> None:
+        """Initialize a Plant and increment the total plant count.
+
+        Args:
+            name (str): Name of the plant.
+            st_height (int): Height of the plant in centimeters.
+            st_age (int): Age of the plant in days.
+        """
         self.name = name
         self.st_height = st_height
         self.st_age = st_age

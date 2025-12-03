@@ -1,4 +1,5 @@
 def garden_intro():
+    """Print a welcome message and display the data of a single plant."""
     name = "Rose"
     height = 25
     age = 30
