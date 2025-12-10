@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 class Plant:
     """Base class representing a generic plant."""
 
@@ -23,7 +25,7 @@ class Flower(Plant):
 
     def bloom(self) -> None:
         """Simulate the flower blooming."""
-        print(f"{self.name} is blooming beautifully!\n")
+        print(f"{self.name} is blooming beautifully!")
 
 
 class Tree(Plant):
@@ -43,7 +45,7 @@ class Tree(Plant):
     def produce_shade(self) -> None:
         """Calculate and print approximate shade based on trunk diameter."""
         print(f"{self.name} provides {int(self.trunk_diameter * 1.56)} "
-              f"square meters of shade\n")
+              f"square meters of shade")
 
 
 class Vegetable(Plant):
@@ -64,17 +66,31 @@ class Vegetable(Plant):
         print(f"{self.name} is rich in {self.nutritional_value}")
 
 
-if __name__ == "__main__":
+def main():
     """Example usage of the Plant, Flower, Tree and Vegetable classes."""
     rose = Flower("Rose", 25, 30, "red")
     sunflower = Flower("Sunflower", 20, 25, "yellow")
-    spruce = Tree("Spruce", 450, 1800, 45)
     oak = Tree("Oak", 500, 1825, 50)
-    banana = Vegetable("Banana", 15, 40, "summer", "potasium")
+    spruce = Tree("Spruce", 450, 1800, 45)
     tomato = Vegetable("Tomato", 80, 90, "summer", "vitamin C")
+    banana = Vegetable("Banana", 15, 40, "summer", "potasium")
     print("=== Garden Plant Types ===\n")
     rose.get_info()
     rose.bloom()
+    print("")
     oak.get_info()
     oak.produce_shade()
+    print("")
     tomato.get_info()
+    print("")
+    sunflower.get_info()
+    sunflower.bloom()
+    print("")
+    spruce.get_info()
+    spruce.get_info()
+    print("")
+    banana.get_info()
+
+
+if __name__ == "__main__":
+    main()

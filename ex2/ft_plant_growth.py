@@ -1,8 +1,11 @@
+#!/usr/bin/env python3
+
 class Plant:
     """Represents a simple plant with height and age tracking."""
 
     def __init__(self, name: str, height: int, time: int) -> None:
-        """Initialize a Plant instance.
+        """
+        Initialize a Plant instance.
 
         Args:
             name (str): Name of the plant.
@@ -26,7 +29,13 @@ class Plant:
         print(f"{self.name}, {self.height}cm, {self.time} days old")
 
 
-if __name__ == "__main__":
+def main() -> None:
+    """
+    Main function to simulate a plant's growth over a week.
+
+    Creates a Plant instance, prints its initial info, ages and grows
+    it for 1 week, and prints the final information.
+    """
     rose = Plant("Rose", 25, 30)
     print("=== Day 1 ===")
     rose.get_info()
@@ -38,3 +47,7 @@ if __name__ == "__main__":
     print("=== Day 7 ===")
     rose.get_info()
     print("Growth this week: +6cm")
+
+
+if __name__ == "__main__":
+    main()

@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 class SecurePlant:
     """Class representing a plant with secure attribute access."""
 
@@ -9,10 +11,10 @@ class SecurePlant:
             st_height (int): Initial height in cm.
             st_age (int): Initial age in days.
         """
-        self.__name = name
+        self.name = name
         self.__st_height = st_height
         self.__st_age = st_age
-        print(f"Plant created: {self.__name}")
+        print(f"Plant created: {self.name}")
 
     def set_height(self, height: int) -> None:
         """Update the plant's height if valid, otherwise reject.
@@ -27,8 +29,6 @@ class SecurePlant:
             print(f"\nInvalid operation attempted: height "
                   f"{height}cm [REJECTED]")
             print("Security: Negative height rejected")
-            print(f"\nCurrent plant: {self.__name} "
-                  f"({self.__st_height}cm, {self.__st_age} days)")
 
     def set_age(self, age: int) -> None:
         """Update the plant's age if valid, otherwise reject.
@@ -62,9 +62,16 @@ class SecurePlant:
         return self.__st_age
 
 
-if __name__ == "__main__":
+def main():
+    """Demonstrate the SecurePlant class functionality."""
     print("=== Garden Security System ===")
     rose = SecurePlant("Rose", 10, 10)
     rose.set_height(25)
     rose.set_age(30)
     rose.set_height(-5)
+    print(f"\nCurrent plant: {rose.name} "
+          f"({rose.get_height()}cm, {rose.get_age()} days)")
+
+
+if __name__ == "__main__":
+    main()

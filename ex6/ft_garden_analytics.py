@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 class GardenManager:
 
     garden = []
@@ -177,16 +179,20 @@ class PrizeFlower(FloweringPlant):
         self.prize_points = prize_points
 
 
-if __name__ == "__main__":
+def main():
+    """Demonstrates how to create gardens, add plants, grow plants, and
+    prints all necessary information"""
     print("=== Garden Management System Demo ===\n")
     alice = GardenManager("Alice")
     bob = GardenManager("Bob")
+    spruce = Plant("Spruce", 80, 400)
     oak = Plant("Oak Tree", 100, 500)
     rose = FloweringPlant("Rose", 25, 20, "red", True)
     sunflower = PrizeFlower("Sunflower", 50, 20, "yellow", True, 10)
     alice.add_plant(oak)
     alice.add_plant(rose)
     alice.add_plant(sunflower)
+    bob.add_plant(spruce)
     print("")
     alice.grow_all()
     print("")
@@ -199,3 +205,7 @@ if __name__ == "__main__":
           f"{GardenManager.GardenStats.count_flowering(alice)} flowering, "
           f"{GardenManager.GardenStats.count_prize(alice)} prize flowers\n")
     GardenManager.create_garden_network()
+
+
+if __name__ == "__main__":
+    main()
